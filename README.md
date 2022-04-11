@@ -21,7 +21,13 @@ docker-compose exec backend alembic upgrade head
 ### View the API Documentation (This will ensure the server is running)
 
 1. Open your web browser of choice
-1. In the URL enter: http://0.0.0.0:3000/docs
+2. In the URL enter: http://0.0.0.0:3000/docs
+
+### View the FRONTEND Application (This will ensure the server is running)
+
+1. Open your web browser of choice
+1. In the URL enter: http://0.0.0.0:3001
+
 
 ## Development Commands
 

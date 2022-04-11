@@ -28,6 +28,13 @@ services:
     links:
       - postgres
 
+  frontend:
+    build:
+      context: ./forntend
+      dockerfile: Dockerfile
+    ports:
+      - 3001:80
+
   pgadmin:
     container_name: pgadmin
     image: dpage/pgadmin4
