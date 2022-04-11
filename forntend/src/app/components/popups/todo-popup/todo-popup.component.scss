@@ -1,0 +1,25 @@
+.todo-section {
+  position: relative;
+
+  .todo-header {
+    border-bottom: .1rem solid black;
+    margin-bottom: 1rem;
+  }
+
+  .todo-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .todo-footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+
+    .todo-button {
+      margin-left: .5rem;
+    }
+  }
+}

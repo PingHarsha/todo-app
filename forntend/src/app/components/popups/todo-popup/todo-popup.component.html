@@ -1,0 +1,22 @@
+<section class="todo-section">
+  <div class="todo-header">
+    <h2 class="title">{{popupType}} TODO</h2>
+  </div>
+  <form [formGroup]="todoForm" class="todo-form">
+    <mat-form-field appearance="outline">
+      <mat-label>Title</mat-label>
+      <input matInput type="text" formControlName="title" placeholder="Enter title">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Text</mat-label>
+      <textarea matInput formControlName="description"
+                placeholder="Enter text"></textarea>
+    </mat-form-field>
+  </form>
+  <div class="todo-footer">
+    <button (click)="close()" class="todo-button" color="warn" mat-button mat-stroked-button>Cancel</button>
+    <button (click)="save()" [disabled]="todoForm.invalid" class="todo-button" color="accent" mat-button
+            mat-raised-button>Submit
+    </button>
+  </div>
+</section>

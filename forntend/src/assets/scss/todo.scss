@@ -1,0 +1,19 @@
+.todo-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 1600px;
+  align-items: stretch;
+  justify-content: flex-start;
+  margin: auto;
+  padding: 1rem;
+
+  .todo-header {
+    display: flex;
+    border-bottom: .1rem solid black;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

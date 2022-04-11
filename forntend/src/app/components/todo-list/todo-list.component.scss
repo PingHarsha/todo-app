@@ -1,0 +1,49 @@
+@use "@angular/material" as mat;
+@use "src/assets/scss/common/variables" as variables;
+
+
+@function calcWidth($val) {
+  @return calc(calc(100% / #{$val}) - 48px);
+}
+
+
+.todo-list {
+  margin: 1rem 0;
+  position: relative;
+  flex-flow: row wrap;
+  box-sizing: border-box;
+  display: flex;
+  place-content: center flex-start;
+  align-items: center;
+
+  .todo-item {
+    width: 100%;
+    margin: 8px;
+
+    @media (min-width: variables.getLayout('mobile')) {
+      width: calcWidth(2);
+    }
+
+    @media (min-width: variables.getLayout('tablet')) {
+      width: calcWidth(3);
+    }
+
+    @media (min-width: variables.getLayout('desktop')) {
+      width: calcWidth(4);
+    }
+
+    .title {
+      margin-left: -16px;
+      .ngx-ellipsis-inner {
+        height: 50px;
+      }
+    }
+
+    .todo-description {
+      .ngx-ellipsis-inner {
+        height: 100px;
+        width: 100%;
+      }
+    }
+  }
+}

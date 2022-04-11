@@ -1,0 +1,12 @@
+@use "node_modules/@angular/flex-layout/core/sass/layout-bp" as bp;
+@use "sass:map";
+
+$todo-layout: (
+mobile: map.get(bp.$overlapping-gt, 'gt-xs'),
+tablet: map.get(bp.$overlapping-gt, 'gt-sm'),
+desktop: map.get(bp.$overlapping-gt, 'gt-md'),
+);
+
+@function getLayout($layout) {
+@return  map.get($todo-layout, $layout);
+}
