@@ -1,7 +1,7 @@
 import {Component, Inject} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {TodoItem} from "../../../classes/todo-item";
-import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators} from "@angular/forms";
 import {TodoListItem} from "../../../classes/todo-list-item";
 
 @Component({
@@ -11,20 +11,20 @@ import {TodoListItem} from "../../../classes/todo-list-item";
 })
 export class TodoPopupComponent {
 
-  todoForm: FormGroup;
+  todoForm: UntypedFormGroup;
   popupType = 'Create';
 
-  get title(): FormControl {
-    return this.todoForm.get('title') as FormControl
+  get title(): UntypedFormControl {
+    return this.todoForm.get('title') as UntypedFormControl
   }
 
-  get description(): FormControl {
-    return this.todoForm.get('description') as FormControl
+  get description(): UntypedFormControl {
+    return this.todoForm.get('description') as UntypedFormControl
   }
 
   constructor(private readonly dialogRef: MatDialogRef<TodoPopupComponent>,
               @Inject(MAT_DIALOG_DATA) public data: TodoItem | TodoListItem,
-              private readonly fb: FormBuilder) {
+              private readonly fb: UntypedFormBuilder) {
     this.todoForm = this.fb.group({
       title: ['', Validators.required],
       description: ['', Validators.required]
